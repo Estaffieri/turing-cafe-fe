@@ -12,12 +12,6 @@ class App extends Component {
     };
   }
 
-  createNewReservation = (newReservation) => {
-    this.setState({
-      reservations: [...this.state.reservations, newReservation],
-    });
-  };
-
   componentDidMount = async () => {
     await getAllReservations()
       .then((data) => this.setState({ reservations: data }))
@@ -30,6 +24,12 @@ class App extends Component {
         return <Card reservation={reservation} key={i} />;
       });
     }
+  };
+
+  createNewReservation = (newReservation) => {
+    this.setState({
+      reservations: [...this.state.reservations, newReservation],
+    });
   };
 
   render() {
