@@ -18,7 +18,6 @@ class Form extends Component {
 
     submitNewReservation = (event) => {
         const newReservation = {...this.state, id: Date.now()}
-        console.log(newReservation)
         this.props.handleReservation(newReservation)
     }
 

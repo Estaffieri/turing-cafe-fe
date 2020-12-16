@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Form from "./Form";
-import { screen, render, waitFor, fireEvent } from "@testing-library/react"
+import { screen, render, fireEvent } from "@testing-library/react"
 import "@testing-library/jest-dom";
 
 describe("Form", () => {
@@ -30,7 +30,6 @@ describe("Form", () => {
         fireEvent.change(inputDate, {target: { value: "12/25" }});
         fireEvent.change(inputTime, {target: { value: "7:00" }});
         fireEvent.change(inputNumber, {target: { value: "2" }});
-        fireEvent.change(inputTime, {target: { value: "7:00" }});
         fireEvent.click(resButton);
 
         expect(inputName.value).toBe("Estelle");
