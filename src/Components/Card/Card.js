@@ -7,7 +7,7 @@ const Card = ({reservation}) => {
             <h3 >{reservation.name}</h3>
             <p>{reservation.date}</p>
             <p>{reservation.time}</p>
-            <p>Number of guests:{reservation.number}</p>
+            <p>Number of guests: {reservation.number}</p>
         </section>
     )
 }
