@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import Card from "../Card/Card";
-import { getAllReservation, getAllReservations } from "../../apiCalls"
+import { getAllReservations } from "../../apiCalls"
 
 class App extends Component {
   constructor() {
