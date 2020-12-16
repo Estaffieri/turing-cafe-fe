@@ -1,0 +1,22 @@
+.reservation-form {
+    display: flex;
+    width: 100%;
+}
+
+input {
+    margin: 2em;
+    padding: 0.5em;
+    border: transparent;
+}
+
+button {
+    margin: 2em;
+    padding: 0.5em;
+    padding-left: 2em;
+    padding-right: 2em;
+    border: transparent;
+    border: transparent;
+    background: teal;
+    color: #ffffff;
+}
+
