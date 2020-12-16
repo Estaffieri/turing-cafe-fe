@@ -17,8 +17,14 @@ class Form extends Component {
     }
 
     submitNewReservation = (event) => {
+        event.preventDefault();
         const newReservation = {...this.state, id: Date.now()}
         this.props.handleReservation(newReservation)
+        this.clearInputs();
+    }
+
+    clearInputs = () => {
+      this.setState({name: "", date: "", time: "", number:""})
     }
 
 

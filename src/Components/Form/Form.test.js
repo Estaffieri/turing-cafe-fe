@@ -29,13 +29,35 @@ describe("Form", () => {
         fireEvent.change(inputDate, {target: { value: "12/25" }});
         fireEvent.change(inputTime, {target: { value: "7:00" }});
         fireEvent.change(inputNumber, {target: { value: "2" }});
-        fireEvent.click(resButton);
 
         expect(inputName.value).toBe("Estelle");
         expect(inputDate.value).toBe("12/25");
         expect(inputTime.value).toBe("7:00");
         expect(inputNumber.value).toBe("2");
-        expect(mockNewReservation).toHaveBeenCalledTimes(1);
+        expect(mockNewReservation).toHaveBeenCalledTimes(0);
 
     })
+
+      it("should clear input feilds after submission", () => {
+        const mockNewReservation = jest.fn();
+        render(<Form handleReservation={mockNewReservation} />);
+
+        const inputName = screen.getByPlaceholderText("Name");
+        const inputDate = screen.getByPlaceholderText("Date (mm/dd)");
+        const inputTime = screen.getByPlaceholderText("Time");
+        const inputNumber = screen.getByPlaceholderText("Number of guests");
+        const resButton = screen.getByText("Make Reservation");
+
+        fireEvent.change(inputName, { target: { value: "Estelle" } });
+        fireEvent.change(inputDate, { target: { value: "12/25" } });
+        fireEvent.change(inputTime, { target: { value: "7:00" } });
+        fireEvent.change(inputNumber, { target: { value: "2" } });
+        fireEvent.click(resButton);
+
+        expect(inputName.value).toBe("");
+        expect(inputDate.value).toBe("");
+        expect(inputTime.value).toBe("");
+        expect(inputNumber.value).toBe("");
+        expect(mockNewReservation).toHaveBeenCalledTimes(1);
+      });
 })
