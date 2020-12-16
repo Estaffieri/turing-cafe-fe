@@ -30,7 +30,7 @@ describe("App", () => {
         expect(screen.getByText("Sally")).toBeInTheDocument();
         expect(screen.getByText("01/11")).toBeInTheDocument();
         expect(screen.getByText("11:00")).toBeInTheDocument();
-        expect(screen.getByText("Number of guests:10")).toBeInTheDocument();
+        expect(screen.getByText("Number of guests: 10")).toBeInTheDocument();
   })
 
   it("should be able to add a new reservation" , () => {
@@ -51,7 +51,7 @@ describe("App", () => {
     expect(screen.getByText("William")).toBeInTheDocument();
     expect(screen.getByText("06/01")).toBeInTheDocument();
     expect(screen.getByText("11:00")).toBeInTheDocument();
-    expect(screen.getByText("Number of guests:10")).toBeInTheDocument();
+    expect(screen.getByText("Number of guests: 10")).toBeInTheDocument();
 
   })
 
