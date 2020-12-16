@@ -4,9 +4,9 @@ import "./Card.css"
 const Card = ({reservation}) => {
     return(
         <section key={reservation.id} className="card">
-            <h3>Name:{reservation.name}</h3>
-            <p>Date:{reservation.date}</p>
-            <p>Time:{reservation.time}</p>
+            <h3 >{reservation.name}</h3>
+            <p>{reservation.date}</p>
+            <p>{reservation.time}</p>
             <p>Number of guests:{reservation.number}</p>
         </section>
     )
